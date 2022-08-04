@@ -43,7 +43,7 @@ Você também pode utilizar alguns comandos básicos, sendo eles:
 
 
 # Docker
-
+Obs.  Não sou fã de doker, mas caso essa seja sua preferencia os comandos seguem abaixo.
 `docker pull alfem/telegram-download-daemon`
 
 When we use the [`TelegramClient`](https://docs.telethon.dev/en/latest/quick-references/client-reference.html#telegramclient) method, it requires us to interact with the `Console` to give it our phone number and confirm with a security code.
