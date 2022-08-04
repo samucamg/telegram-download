@@ -1,6 +1,6 @@
 # telegram-download
 
-Atenão, este não é um bot, e sim um sistema para baixar de forma automática arquivos do Telegram, para baixar diretamente para o google drive, será necessário utilizar o rclone para Montar primeiramente o drive como HD.
+Atencão, este não é um bot, e sim um sistema para baixar de forma automática arquivos do Telegram, para baixar diretamente para o google drive, será necessário utilizar o rclone para Montar primeiramente o drive como HD.
 
 Caso você por acaso tenha uma vps com boa velocidade, e uma conta do google drive e deseja baixar vários arquivos para o google drive para ela, este script é para você.   Não sabe como montar o google drive como HD?  Acesse meu canal https://www.youtube.com/c/SamucaTutoriais que irá encontrar vários tutoriais ensinando como fazer.
 
