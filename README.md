@@ -1,33 +1,23 @@
-# telegram-download-daemon
+# telegram-download
 
-A Telegram Daemon (not a bot) for file downloading automation 
+Atenão, este não é um bot, e sim um sistema para baixar de forma automática arquivos do Telegram, para baixar diretamente para o google drive, será necessário utilizar o rclone para Montar primeiramente o drive como HD.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E03K0RP)
+Caso você por acaso tenha uma vps com boa velocidade, e uma conta do google drive e deseja baixar vários arquivos para o google drive para ela, este script é para você.   Não sabe como montar o google drive como HD?  Acesse meu canal https://www.youtube.com/c/SamucaTutoriais que irá encontrar vários tutoriais ensinando como fazer.
 
-If you have got an Internet connected computer or NAS and you want to automate file downloading from Telegram channels, this
-daemon is for you. 
+# Instalação
 
-Telegram bots are limited to 20Mb file size downloads. So I wrote this agent
-or daemon to allow bigger downloads (limited to 2GB by Telegram APIs).
+Você necessita ter Python3 (3.6 ou superior).
 
-# Installation
-
-You need Python3 (3.6 works fine, 3.5 will crash randomly).
-
-Install dependencies by running this command:
+Instale as dependencias com o comando abaixo, ou caso não queira instalar cryptg você pode simplesmente instalar Telethon que irá funcionar perfeitamente na maioria dos casos.  Para instalar thelethon utilize o comando: pip3 install telethon:
 
     pip install -r requirements.txt
 
-(If you don't want to install `cryptg` and its dependencies, you just need to install `telethon`)
 
-Warning: If you get a `File size too large message`, check the version of Telethon library you are using. Old versions have got a 1.5Gb file size limit.
+Para conseguir sua id do telegram, acesse: https://core.telegram.org/api/obtaining_api_id
 
+# Formas de uso
 
-Obtain your own api id: https://core.telegram.org/api/obtaining_api_id
-
-# Usage
-
-You need to configure these values:
+Você precisa configurar os valores abaixo:
 
 | Environment Variable     | Command Line argument | Description                                                  | Default Value       |
 |--------------------------|:-----------------------:|--------------------------------------------------------------|---------------------|
@@ -38,18 +28,18 @@ You need to configure these values:
 | `TELEGRAM_DAEMON_CHANNEL`  | `--channel`             | Channel id to download from it (Please, check [Issue 45](https://github.com/alfem/telegram-download-daemon/issues/45), [Issue 48](https://github.com/alfem/telegram-download-daemon/issues/48) and [Issue 73](https://github.com/alfem/telegram-download-daemon/issues/73))                              |                     |
 | `TELEGRAM_DAEMON_DUPLICATES`  | `--duplicates`             | What to do with duplicated files: ignore, overwrite or rename them | rename                     |
 
-You can define them as Environment Variables, or put them as a command line arguments, for example:
+Você pode alterar diretamente no script, ou colocar as variáveis como no exemplo abaixo:
 
-    python telegram-download-daemon.py --api-id <your-id> --api-hash <your-hash> --channel <channel-number>
+    python telegram-download-daemon.py --api-id <seu id> --api-hash <seu-hash> --channel <seu-canal>
 
 
-Finally, resend any file link to the channel to start the downloading. This daemon can manage many downloads simultaneously.
+Uma vez instalado, você poderá baixar quantos arquivos desejar, apenas enviando uma cópia para seu canal.
 
-You can also 'talk' to this daemon using your Telegram client:
+Você também pode utilizar alguns comandos básicos, sendo eles:
 
-* Say "list" and get a list of available files in the destination path.
-* Say "status" to the daemon to check the current status.
-* Say "clean" to remove stale (*.tdd) files from temporary directory.
+* diga "list" para ter uma lista com todos os arquivos baixados.
+* diga "status" para checar o statos atual.
+* diga "clean" para remover arquivos (*.tdd) do diretorio temporário.
 
 
 # Docker
